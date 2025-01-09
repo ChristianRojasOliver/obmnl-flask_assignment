@@ -1,5 +1,5 @@
 # Import libraries
-import flask from Flask, request, url_for, redirect, render_template
+from flask import Flask, request, url_for, redirect, render_template
 
 # Instantiate Flask functionality
 app = Flask("Financial Transaction Recording System")
@@ -70,6 +70,7 @@ def delete_transaction(transaction_id):
             break  # Exit the loop once the transaction is found and removed
     # Redirect to the transactions list page after deleting the transaction
     return redirect(url_for("get_transactions"))
-    
+
 # Run the Flask app
-    
+if __name__ == "__main__":
+    app.run(debug=True)
